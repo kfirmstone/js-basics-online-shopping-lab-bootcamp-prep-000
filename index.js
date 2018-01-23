@@ -44,19 +44,30 @@ for(let i=0; i<cart.length; i++){
   return sum
 }
 
+
 function removeFromCart(item) {
-   var flag = false;
- for (var i = 0; i < cart.length; i++) {
-    if (cart[i][item]) {
-      flag = true;
-      cart.splice(i, 1);
-   }
-  else{
-     console.log ('That item is not in your cart.');
+//  console.log(cart.hasOwnProperty(item))
+// if (cart.hasOwnProperty(item)){ 
+// var newCart = cart
+// if(Object.keys(cart[i])[0]===item){
+for(let i=0; i<cart.length; i++){
+  if(Object.keys(cart[i])[0]===item){
+     // console.log(i)
+    // console.log(cart.splice(i,1))
+     //console.log (cart) 
+ // var newCart = cart
+       //newCart.splice((i[), 1)
+     // return newCart
+     cart.splice(i, 1)
      return cart
-  }
- }
+      }
 }
+//}
+ // else {
+    console.log(`That item is not in your cart.`)
+    return cart
+  }
+//}
 
 
 function placeOrder(cardNumber) {
